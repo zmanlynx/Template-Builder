@@ -1,0 +1,5 @@
+.idea/
+/server/Gemfile.lock
+/client/Gemfile.lock
+/server/logs
+/server/templates
