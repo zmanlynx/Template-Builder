@@ -1,0 +1,96 @@
+<h5 class="header-info">Информация о шаблоне:</h5>
+
+<div class="row">
+
+  <div class="col-md-8 col-md-push-4"  style="line-height: 90px; max-height: 140px;">
+    <div class="form-group">
+      <div class="col-md-2 div-left-label-text " ><span>Описание:</span></div>
+      <div class="input-group  col-md-10" >
+        <div class="form-group">
+          <textarea class="form-control description-area" rows="4" id="comment" readonly><%= @template_entity.description %></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-md-pull-8">
+    <div class="form-group">
+      <div class="col-md-4 div-left-label-text div-line-height"><span>Канал:</span></div>
+      <div class="input-group  col-md-8 div-line-height" >
+        <span style="color:red;font-weight: bolder;"><%= @template_entity.channel %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 div-separate-space col-md-pull-8">
+    <div class="form-group">
+      <div class="col-md-4 div-left-label-text div-line-height"><span>Тип:</span></div>
+      <div class="input-group  col-md-8 div-line-height" >
+        <span><%= @template_entity.type %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 div-separate-space col-md-pull-8">
+    <div class="form-group">
+      <div class="col-md-4 div-left-label-text div-line-height"><span>Язык:</span></div>
+      <div class="input-group  col-md-8 div-line-height" >
+        <span><%= @template_entity.language %></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h5 class="header-info">Содержание шаблона:</h5>
+<% if @template_entity.class::ADDITIONAL_FIELDS.size>=1 %>
+    <div class="row">
+  <% @template_entity.class::ADDITIONAL_FIELDS.each do |field| %>
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <div class="col-md-2 div-left-label-text div-line-height"><span><%= field.upcase %>:</span></div>
+          <div class="input-group  col-md-10 div-line-height" >
+            <span><%= @template_entity.content[field] %></span>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+    </div>
+<% end %>
+
+
+<ul class="nav nav-tabs">
+  <% @template_entity.class::DATA_FORMATS.each_with_index do |format, index| %>
+      <li<%= " class=\"active\"" if index==0 %>><a data-toggle="tab" href="#<%= format.upcase %>"><%= format.upcase %></a></li>
+  <% end %>
+</ul>
+
+<div class="tab-content">
+  <% @template_entity.class::DATA_FORMATS.each_with_index do |format, index| %>
+      <div id="<%= format.upcase %>" class="tab-pane fade<%= ' in active' if index==0 %>">
+        <div class="form-group">
+          <textarea class="form-control format-area" rows="8" readonly><%= @template_entity.content[Template::FORMATS_KEY][format]%></textarea>
+        </div>
+      </div>
+  <% end %>
+
+</div>
+<div class="row" style="margin-top: 30px;">
+  <div class="col-md-12 center-block">
+    <div class="col-md-4 text-center">
+      <button type="button" class="btn simple-button" onclick="location.href = '/<%= @template_entity.filename.downcase %>/edit'"><span class="glyphicon glyphicon-pencil icon-red"></span> &nbsp;Редактировать</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button type="button" class="btn simple-button" onclick="location.href = '/<%= @template_entity.filename.downcase %>/test'"><span class="glyphicon glyphicon-play icon-green"></span> &nbsp;Тестировать</button>
+    </div>
+    <div class="col-md-4 text-center">
+      <button type="button" class="btn simple-button" onclick="location.href = '/'" id="back-to-main-btn"><span class="glyphicon glyphicon-chevron-left icon-blue"></span> &nbsp;Назад</button>
+    </div>
+  </div>
+  </div>
+</div>
+<div style="margin-top: 30px">
+</div>
+
+<script type="text/javascript" src="js/test_template.js"></script>

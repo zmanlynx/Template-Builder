@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+ruby '2.3.3'
+gem 'json'
+gem 'rack'
+gem 'rack-app'
+gem 'rack-app-front_end'
+gem 'rake'
+gem 'rspec'

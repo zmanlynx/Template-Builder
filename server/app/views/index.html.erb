@@ -1,0 +1,46 @@
+
+<%= render './_paginator.html.erb' %>
+
+<div class="divTable" style="border: 1px solid lightgrey;">
+  <div class="divTableHeading">
+    <div class="divTableHead center-cell">КАНАЛ&nbsp;</div>
+    <div class="divTableHead">ТИП&nbsp;</div>
+    <div class="divTableHead center-cell">ЯЗЫК&nbsp;</div>
+    <div class="divTableHead">ОПИСАНИЕ&nbsp;</div>
+    <div class="divTableHead center-cell">ДЕЙСТВИЯ&nbsp;</div>
+  </div>
+  <div class="divTableBody">
+
+    <% if defined?(@template_entities) %>
+        <% @template_entities.each do |template_entity| %>
+
+            <div class="divTableRow" id="<%= template_entity.filename.downcase %>">
+              <div class="divTableCell center-cell"><%= template_entity.channel %>&nbsp;</div>
+              <div class="divTableCell"><%= template_entity.type %>&nbsp;</div>
+              <div class="divTableCell center-cell"><%= template_entity.language %>&nbsp;</div>
+              <div class="divTableCell"><%= template_entity.description %>&nbsp;</div>
+              <div class="divTableCell center-cell">
+                <a href="/<%= template_entity.filename.downcase %>/test" class="icon-green" ><span class="glyphicon glyphicon-play action-icon"></span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="destroy-template" id="link-delete-<%= template_entity.filename.downcase %>" data-toggle="modal" data-target="#delete-modal"><span class="glyphicon glyphicon-remove action-icon icon-red"></span></a>
+              </div>
+            </div>
+
+        <% end %>
+    <% end %>
+
+  </div>
+  <div class="divTableFoot">
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+  </div>
+
+</div>
+
+<%= render './_modal_delete_confirmation.html.erb' %>
+
+<%= render './_paginator.html.erb' %>
+
+<script type="text/javascript" src="js/index.js"></script>

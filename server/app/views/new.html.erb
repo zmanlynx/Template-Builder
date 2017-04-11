@@ -1,0 +1,95 @@
+<form action="/create" method="post" name='template-form'>
+
+<h5 class="header-info">Информация о шаблоне:</h5>
+
+<input type="hidden" name="<%= Template::CHANNEL_KEY %>" value="<%= @channel_class.name %>">
+
+<div class="row">
+  <div class="col-md-8 col-md-push-4"  style="line-height: 75px; max-height: 140px;">
+    <div class="form-group">
+      <div class="col-md-2 div-left-label-text " ><span>Описание:</span></div>
+      <div class="input-group  col-md-10" >
+        <div class="form-group">
+          <textarea class="form-control description-area" rows="4" id="template-description" name="<%= Template::DESCRIPTION_KEY %>"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-md-pull-8" style="margin-top: 7px;">
+    <div class="form-group">
+      <div class="col-md-4 div-left-label-text div-line-height"><span>Тип:</span></div>
+      <div class="input-group  col-md-8 div-line-height" >
+        <input class="form-control description-area" type="text" name="<%= Template::TYPE_KEY %>" id="template-type">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-md-pull-8">
+    <div class="form-group">
+      <div class="col-md-4 div-left-label-text div-line-height"><span>Язык:</span></div>
+      <div class="form-group col-md-8 div-line-height" style="margin-left: -15px">
+        <select class="form-control dropdown-language" name="<%= Template::LANGUAGE_KEY %>" id="sel1">
+          <% AVAILABLE_LANGUAGES.each do |language| %>
+              <option value='<%=language%>'><%=language%></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h5 class="header-info">Содержание шаблона:</h5>
+  <% if @channel_class::ADDITIONAL_FIELDS.size>=1 %>
+      <div class="row" style="margin-top: 20px;">
+        <% @channel_class::ADDITIONAL_FIELDS.each do |field| %>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="col-md-2 div-left-label-text div-line-height"><span><%= field.upcase %>:</span></div>
+                <div class="input-group  col-md-10 div-line-height" >
+                  <input class="form-control description-area" type="text" name="<%= field %>" id="<%= field %> " >
+                </div>
+              </div>
+            </div>
+
+        <% end %>
+      </div>
+  <% end %>
+
+  <ul class="nav nav-tabs">
+    <% @channel_class::DATA_FORMATS.each_with_index do |format, index| %>
+        <li<%= " class=\"active\"" if index==0 %>><a data-toggle="tab" href="#<%= format.upcase %>" id="<%= format %>-tablink"><%= format.upcase %></a></li>
+    <% end %>
+  </ul>
+
+  <div class="tab-content">
+    <% @channel_class::DATA_FORMATS.each_with_index do |format, index| %>
+        <div id="<%= format.upcase %>" class="tab-pane fade<%= ' in active' if index==0 %>">
+          <div class="form-group">
+            <textarea class="form-control format-area" name="<%= Template::FORMATS_KEY %>[<%= format %>]" rows="8" id="template-<%= format %>-body" ></textarea>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-12">
+      <div class="col-md-6 text-center">
+        <button class="btn simple-button" type="submit" id="save-btn"><span class="glyphicon glyphicon-save icon-green"></span> &nbsp;Сохранить</button>
+      </div>
+      <div class="col-md-6 text-center">
+        <button class="btn simple-button" type="button" onclick="location.href = '/'; "><span class="glyphicon glyphicon-chevron-left icon-blue"></span> &nbsp;Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div style="margin-top: 30px">
+  </div>
+
+</form>
+
+

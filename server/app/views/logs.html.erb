@@ -1,0 +1,75 @@
+<form action="/logs" method="get" id="log_form">
+  <input type="hidden" name="current_tab">
+
+  <ul class="nav nav-tabs">
+    <li><a class="log-tabs" data-id="requests" data-toggle="tab" href="#requests">Запросы</a></li>
+    <li><a class="log-tabs" data-id="errors" data-toggle="tab" href="#errors">Ошибки</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+        <div id="requests" class="tab-pane fade in active" style="border: 1px solid #7E318D;">
+          <div class="row">
+            <div class="col-md-3" style="margin-top: 7px;">
+              <div class="form-group">
+                <div class="col-md-8 div-left-label-text div-line-height"><span>Количество строк:</span></div>
+                <div class="input-group  col-md-4 div-line-height" >
+                  <input class="form-control description-area" type="text" name="reqlines" value="<%= @request_lines %>">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 text-left" style="margin-top: 7px;" >
+              <button type="submit" class="btn simple-button" style="width:100px; margin-left: -20px">Обновить</button>
+            </div>
+            <div class="col-md-3 text-right" style="margin-top: 7px;">
+              <button type="button" onclick="clearLog('RequestLogger')" class="btn simple-button" style="width:120px; margin-right: 10px;">Очистить лог</button>
+            </div>
+          </div>
+            <pre><%= @request_content %></pre>
+        </div>
+
+    <div id="errors" class="tab-pane fade" style="border: 1px solid #7E318D;">
+      <div class="row">
+        <div class="col-md-3" style="margin-top: 7px;">
+          <div class="form-group">
+            <div class="col-md-8 div-left-label-text div-line-height"><span>Количество строк:</span></div>
+            <div class="input-group  col-md-4 div-line-height" >
+              <input class="form-control description-area" type="text" name="errlines" value="<%= @error_lines %>">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-left" style="margin-top: 7px;" >
+          <button type="submit" class="btn simple-button" style="width:100px; margin-left: -20px">Обновить</button>
+        </div>
+        <div class="col-md-3 text-right" style="margin-top: 7px;">
+          <button type="button" onclick="clearLog('ErrorLogger')" class="btn simple-button" style="width:120px; margin-right: 10px;">Очистить лог</button>
+        </div>
+      </div>
+      <pre><%= @error_content %></pre>
+    </div>
+
+  </div>
+
+
+</form>
+<div style="height: 20px;"></div>
+<script type="text/javascript">
+    $('#log_form').submit(function(){
+        var id = $($('.nav-tabs .active')[0].firstChild).attr('data-id');
+        $("input[name='current_tab']").val(id);
+    });
+
+    $(document).ready(function(){
+        var obj = $('a[data-id="<%= @current_tab %>"]');
+        obj.trigger('click');
+    });
+
+    function clearLog(loggerClass) {
+        $.ajax({
+            url: '/logs',
+            type: 'DELETE',
+            data: { logger_class: loggerClass },
+            success: location.reload()
+        });
+    }
+</script>

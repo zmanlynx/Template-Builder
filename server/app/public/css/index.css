@@ -1,0 +1,83 @@
+.divTable{
+    display: table;
+    width: 100%;
+}
+.divTableRow {
+    border: 1px solid grey;
+    display: table-row;
+}
+.divTableHeading {
+    background-color: #222222;
+    display: table-header-group;
+}
+.divTableHead {
+    display: table-cell;
+    padding: 7px 10px;
+}
+.divTableCell {
+    display: table-cell;
+    padding: 3px 10px;
+}
+.divTableHeading {
+    background-color: #222222;
+    border: 1px solid #222222;
+    color: white;
+    display: table-header-group;
+    font-weight: bold;
+}
+.divTableFoot {
+    background: #222222;
+    display: table-footer-group;
+    border: 1px solid #222222;
+    min-height: 10px;
+}
+.divTableFootItem {
+    display: table-cell;
+    padding-top: 6px;
+}
+.divTableBody {
+    display: table-row-group;
+}
+
+div.divTableRow:hover .divTableCell {
+    background: #7E318D;
+    cursor: pointer;
+    color: white;
+}
+
+div.divTableRow:hover .divTableCell:last-child {
+    background: white;
+    cursor: default;
+    color: black;
+}
+
+div.divTableCell:last-child {
+    width: 60px;
+}
+
+.center-cell {
+    text-align: center;
+}
+
+.action-icon {
+    font-size: 17px;
+}
+.pagination > li > a:hover {
+    background: #7E318D;
+    background-image: none;
+    color: white;
+    opacity: 0.8;
+}
+.pagination > li.active > a {
+    background: #7E318D !important;
+    border: 1px solid #DDDDDD;
+    background-image: none;
+}
+.pagination > li.active > a:hover {
+    background: #7E318D;
+    border: 1px solid #DDDDDD;
+    background-image: none;
+}
+.pagination > li > a {
+    color: #222222;
+}

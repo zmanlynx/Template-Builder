@@ -1,0 +1,115 @@
+.header-info {
+    padding-left: 20px;
+    padding-bottom: 5px;
+    color: #222222;
+    border-bottom: 1px solid #222222;
+}
+.div-left-label-text {
+    text-align: right;
+    color: #222222;
+    font-weight: bolder
+}
+
+.div-line-height {
+    line-height: 34px;
+}
+
+.div-separate-space {
+    margin-top: -20px;
+}
+
+ul.nav-tabs > li.active > a {
+    background-color: #7E318D !important;
+    color: white !important;
+    background-image: none;
+    border: 1px solid #7E318D !important;
+}
+ul.nav-tabs > li.active > a:hover {
+    background-color: #7E318D !important;
+    color: white !important;
+    background-image: none;
+    border: 1px solid #7E318D !important;
+}
+
+ul.nav-tabs > li > a {
+    background-color: #222222 !important;
+    color: white;
+    background-image: none;
+    border: 1px solid #222222 !important;
+}
+ul.nav-tabs > li > a:hover {
+    background-color: #7E318D !important;
+    color: white !important;
+    background-image: none;
+    opacity: 0.8;
+    border: 1px solid #7E318D !important;
+}
+
+.format-area {
+    background: white !important;
+    border: 2px solid #7E318D;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.format-area:focus {
+    border-color: #7E318D;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+.description-area {
+    background: white !important;
+    border: 1px solid #222222;
+    resize:none;
+}
+.description-area:focus {
+    border-color: #222222;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.dropdown-language {
+    background: white !important;
+    width: 100px;
+    border: 1px solid #222222;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+
+.dropdown-language:focus {
+    border-color: #222222;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/*-------------------------- Buttons------------------------ */
+
+.simple-button {
+    background: #080808;
+    color: white;
+    width: 250px;
+}
+
+.simple-button:hover {
+    background: #7E318D;
+    color: white;
+}
+
+.icon-red {
+    color:red;
+}
+
+.icon-purple {
+    color: #7E318D;
+}
+
+.icon-green {
+    color: green;
+}
+
+.icon-yellow {
+    color: yellow;
+}
+
+.icon-blue {
+    color:#00AED9;
+}
+

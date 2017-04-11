@@ -1,0 +1,233 @@
+{
+  "otp.ru.sms": {
+    "description": "Одноразовый пароль",
+    "subject": "Высылаем Вам, [[name]] пароль для восстановления!",
+    "phone_number": "9923232333",
+    "formats": {
+      "text": "Код подтверждения - [[CODE]]. Никому не сообщайте этот код.",
+      "html": "<h1>Код подтверждения - [[CODE]]. Никому не сообщайте этот код.</h1>"
+    }
+  },
+  "otp.en.sms": {
+    "description": "Одноразовый пароль",
+    "formats": {
+      "text": "OpenWallet. Confirmation code - [[CODE]]. Do not share this code."
+    }
+  },
+  "otp.kz.sms": {
+    "description": "Одноразовый пароль",
+    "formats": {
+      "text": "OpenWallet. Растау коды - [[CODE]]. Бұл кодты ешкімге айтпаңыз."
+    }
+  },
+  "tpwd.ru.sms": {
+    "description": "Временный пароль",
+    "formats": {
+      "text": "OpenWallet.  Ваш временный пароль - [[TMPPWD]]. Смените его после входа в систему."
+    }
+  },
+  "tpwd.en.sms": {
+    "description": "Временный пароль",
+    "formats": {
+      "text": "OpenWallet. Your temporary password - [[TMPPWD]].  Please, change it after login."
+    }
+  },
+  "tpwd.kz.sms": {
+    "description": "Временный пароль",
+    "formats": {
+      "text": "OpenWallet.  Сіздің уақытша пароліңіз - [[TMPPWD]]. Жүйеге кіргеннен кейін оны ауыстырыңыз."
+    }
+  },
+  "block.ru.sms": {
+    "description": "Блокировка ЭК",
+    "formats": {
+      "text": "OpenWallet. Ваш электронный кошелек заблокирован. Для разблокирования обратитесь в Банк по телефону: 3434 (звонок бесплатный)."
+    }
+  },
+  "block.en.sms": {
+    "description": "Блокировка ЭК",
+    "formats": {
+      "text": "OpenWallet. Your e-wallet blocked. To unblock it, please, call 3434, toll-free call."
+    }
+  },
+  "block.kz.sms": {
+    "description": "Блокировка ЭК",
+    "formats": {
+      "text": "OpenWallet. Сіздің электрондық әмияныңыз оқшауланды. Оны оқшаудан шығару үшін Банкке мына телефон бойынша хабарласыңыз: 3434. Қоңырау шалу тегін."
+    }
+  },
+  "newpwd.ru.sms": {
+    "description": "Смена пароля",
+    "formats": {
+      "text": "OpenWallet. Пароль успешно изменен."
+    }
+  },
+  "newpwd.en.sms": {
+    "description": "Смена пароля",
+    "formats": {
+      "text": "OpenWallet. Password changed sucsessfully. "
+    }
+  },
+  "newpwd.kz.sms": {
+    "description": "Смена пароля",
+    "formats": {
+      "text": "OpenWallet. Пароль табысты түрде өзгерді."
+    }
+  },
+  "creditmoney.ru.sms": {
+    "description": "Поступление средств",
+    "formats": {
+      "text": "OpenWallet. [[DD-MM-YYYY HH24:MI]] Пополнение счета [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Остаток   [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]"
+    }
+  },
+  "creditmoney.en.sms": {
+    "description": "Поступление средств",
+    "formats": {
+      "text": "OpenWallet.  [[DD-MM-YYYY HH24:MI]] Account [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]] replanishment.  Balance [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]."
+    }
+  },
+  "creditmoney.kz.sms": {
+    "description": "Поступление средств",
+    "formats": {
+      "text": "OpenWallet. [[DD-MM-YYYY HH24:MI]] Шотты толтыру [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Қалдық   [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]"
+    }
+  },
+  "debetmoney.ru.sms": {
+    "description": "Списание средств",
+    "formats": {
+      "text": "OpenWallet. [[DD-MM-YYYY HH24:MI]] Списание со счета [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Остаток  [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]"
+    }
+  },
+  "debetmoney.en.sms": {
+    "description": "Списание средств",
+    "formats": {
+      "text": "OpenWallet. [[DD-MM-YYYY HH24:MI]] Charge-off from [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Balance [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]."
+    }
+  },
+  "smsdebetmoney.kz.sms": {
+    "description": "Списание средств",
+    "formats": {
+      "text": "OpenWallet. [[DD-MM-YYYY HH24:MI]] Шоттан есептен шығару [[НАИМЕНОВАНИЕ СЧЕТА]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Қалдық  [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]"
+    }
+  },
+  "welcome.ru.email": {
+    "description": "Приветственное письмо",
+    "subject": "Приветственное письмо",
+    "formats": {
+      "text": "Поздравляем вас с успешной регистрацией в cистеме электронных денег OpenWallet",
+      "html": ""
+    }
+  },
+  "welcome.en.email": {
+    "description": "Приветственное письмо",
+    "subject": "Приветственное письмо",
+    "formats": {
+      "text": "Congratulations on your successful registration in the e-money system OpenWallet!",
+      "html": ""
+    }
+  },
+  "welcome.kz.email": {
+    "description": "Приветственное письмо",
+    "subject": "Приветственное письмо",
+    "formats": {
+      "text": "Сізді OpenWallet электрондық ақша жүйесіне табысты тіркелуіңізбен құттықтаймыз",
+      "html": ""
+    }
+  },
+  "confirm.ru.email": {
+    "description": "Подтверждение электронной почты",
+    "subject": "Подтверждение электронной почты",
+    "formats": {
+      "text": "Здравствуйте! Вы  зарегистрированы в системе электронных денег OpenWallet. Просим вас перейти по данной ссылке (ссылка на сайт) для подтверждения адреса электронной почты.",
+      "html": ""
+    }
+  },
+  "confirm.en.email": {
+    "description": "Подтверждение электронной почты",
+    "subject": "Подтверждение электронной почты",
+    "formats": {
+      "text": "Welcome! You have registered in the e-money system OpenWallet. Please, follow this link  (link to website) to verify your e-mail address",
+      "html": ""
+    }
+  },
+  "confirm.kz.email": {
+    "description": "Подтверждение электронной почты",
+    "subject": "Подтверждение электронной почты",
+    "formats": {
+      "text": "Сәлеметсіз бе! Сіз OpenWallet электрондық ақша жүйесіне тіркелдіңіз. Электрондық поштаның мекенжайын растау үшін мына сілтеме бойынша (сайтқа сілтеме) өтуіңізді сұраймыз.",
+      "html": ""
+    }
+  },
+  "changepwd.ru.email": {
+    "description": "Смена пароля",
+    "subject": "Смена пароля",
+    "formats": {
+      "text": "Здравствуйте! [[DD-MM-YYYY HH24:MI]] ваш пароль в системе электронных денег OpenWallet  успешно изменен.",
+      "html": ""
+    }
+  },
+  "changepwd.en.email": {
+    "description": "Смена пароля",
+    "subject": "Смена пароля",
+    "formats": {
+      "text": "Welcome! [[DD-MM-YYYY HH24:MI]] Your password in the e-money system OpenWallet changed suscessfully.",
+      "html": ""
+    }
+  },
+  "changepwd.kz.email": {
+    "description": "Смена пароля",
+    "subject": "Смена пароля",
+    "formats": {
+      "text": "Сәлеметсіз бе! [[DD-MM-YYYY HH24:MI]]  OpenWallet  электрондық ақша жүйесіндегі сіздің пароліңіз табысты түрде өзгерді.",
+      "html": ""
+    }
+  },
+  "creditmoney.ru.email": {
+    "description": "Поступление средств",
+    "subject": "Поступление средств",
+    "formats": {
+      "text": "Здравствуйте! На ваш счет [[НАИМЕНОВАНИЕ СЧЕТА]] [[DD-MM-YYYY HH24:MI]] зачислено: [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Остаток на счете [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]",
+      "html": ""
+    }
+  },
+  "creditmoney.en.email": {
+    "description": "Поступление средств",
+    "subject": "Поступление средств",
+    "formats": {
+      "text": "Welcome! The amount of [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]] was credited on to your account [[НАИМЕНОВАНИЕ СЧЕТА]]. Account balance [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]",
+      "html": ""
+    }
+  },
+  "creditmoney.kz.email": {
+    "description": "Поступление средств",
+    "subject": "Поступление средств",
+    "formats": {
+      "text": "Сәлеметсіз бе! Сіздің шотыңызға [[НАИМЕНОВАНИЕ СЧЕТА]] [[DD-MM-YYYY HH24:MI]]  [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]  аударылды. Шоттағы қалдық [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]",
+      "html": ""
+    }
+  },
+  "debetmoney.ru.email": {
+    "description": "Списание средств",
+    "subject": "Списание средств",
+    "formats": {
+      "text": "Здравствуйте! [[DD-MM-YYYY HH24:MI]] с вашего счета [[НАИМЕНОВАНИЕ СЧЕТА]] списано:[[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Остаток на счете [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]",
+      "html": ""
+    }
+  },
+  "debetmoney.en.email": {
+    "description": "Списание средств",
+    "subject": "Списание средств",
+    "formats": {
+      "text": "Welcome! [[DD-MM-YYYY HH24:MI]] Your account [[НАИМЕНОВАНИЕ СЧЕТА]] was debited:[[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]]. Account balance [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]].",
+      "html": ""
+    }
+  },
+  "debetmoney.kz.email": {
+    "description": "Списание средств",
+    "subject": "Списание средств",
+    "formats": {
+      "text": "Сәлеметсіз бе! [[DD-MM-YYYY HH24:MI]] сіздің шотыңыздан [[НАИМЕНОВАНИЕ СЧЕТА]] [[СУММА]] [[ALFA_3 ВАЛЮТЫ ОПЕРАЦИИ]] есептен шығарылды. Шоттағы қалдық [[СУММА]] [[ALFA_3 ВАЛЮТЫ СЧЕТА]]",
+      "html": ""
+    }
+  }
+}

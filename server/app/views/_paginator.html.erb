@@ -1,0 +1,30 @@
+<!------------------ Paginator BLOCK --------------------->
+<% if defined?(@page_manager) && @page_manager.is_a?(PageManager) %>
+    <div class="text-center">
+      <ul class="pagination">
+        <% previous_page = @page_manager.current_page - 1 <= 0 ? 1 : @page_manager.current_page - 1  %>
+        <li>
+          <a href="/?page=<%= previous_page %>" aria-label="Предыдущая">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <% for page_number in 1..@page_manager.total_pages do  %>
+
+            <% if @page_manager.current_page == page_number %>
+                <li class="active"><a href="#"><%= page_number %></a></li>
+            <% else %>
+                <li><a href="/?page=<%= page_number %>"> <%= page_number %> </a></li>
+            <%end%>
+
+        <% end %>
+
+        <% next_page = @page_manager.current_page + 1 > @page_manager.total_pages ? @page_manager.total_pages : @page_manager.current_page + 1  %>
+        <li>
+          <a href="/?page=<%= next_page %>" aria-label="Следующая">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+<% end %>
+<!------------------ Paginator END --------------------->

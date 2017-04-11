@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="vendors/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/show.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="vendors/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+
+  <title><%= APP_NAME %></title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><%= APP_NAME %> <span style="font-size: 10px"><%= APP_VERSION %></span> </a>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+
+
+
+<% if defined?(@info_message) && !(@info_message.nil?) %>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active nav-button"><a href="/"><span class="glyphicon glyphicon-th-list"></span>&nbsp; Все Шаблоны</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav nav-center-ul">
+            <div class="nav-center-block">
+              <div style="line-height: 50px;"><span style="color:lightgreen;"><%= @info_message %></span></div>
+            </div>
+          </ul>
+<% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <!-------------------------- CreateChannels & Show ALL BLOCK ---------------------->
+            <% if @channels %>
+                <li class="active dropdown nav-button"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  &nbsp;Создать Шаблон </a>
+
+                  <ul class="dropdown-menu">
+                    <% @channels.each do |channel_class|  %>
+                        <li>
+                          <a href="/new/<%= channel_class %>">
+                            <img class="channel-icon-nav" src="images/channels/<%= channel_class.downcase %>.png" onerror="this.src='images/channels/default.png'">
+                            <%= channel_class %>
+                          </a>
+                        </li>
+                    <% end %>
+                  </ul>
+
+                </li>
+            <% end %>
+            <!-------------------------- CreateChannels & Show ALL END ---------------------->
+          </ul>
+          <!--------------  Search Status BLOCK --------------->
+          <ul class="nav navbar-nav nav-center-ul">
+            <div class="nav-center-block">
+              <form class="navbar-form" id="filterForm" action="/" method="post" >
+                <div class="input-group" >
+                  <input type="text" placeholder="Фильтр" id="filter_string" name="filter_string" value="<%= @filter_string if defined?(@filter_string) %>"class="form-control" >
+                  <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="filter_button"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+                </div>
+              </form>
+            </div>
+          </ul>
+          <!--------------  Search Status END  ------------------->
+<% end %>
+    </div>
+
+  </div>
+</nav>
+
+<div id="content_body" class="container">
+
+  <%= yield %>
+
+</div>
+
+<script src="vendors/js/bootstrap.min.js"></script>
+</body>
+</html>

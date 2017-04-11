@@ -1,0 +1,39 @@
+<div class="divTable" style="border: 1px solid lightgrey;">
+  <div class="divTableHeading">
+    <div class="divTableHead center-cell">КАНАЛ&nbsp;</div>
+    <div class="divTableHead">ТИП&nbsp;</div>
+    <div class="divTableHead center-cell">ЯЗЫК&nbsp;</div>
+    <div class="divTableHead">ОПИСАНИЕ&nbsp;</div>
+    <div class="divTableHead center-cell">ДЕЙСТВИЯ&nbsp;</div>
+  </div>
+  <div class="divTableBody">
+
+    <% if @template_entities %>
+        <% @template_entities.each do |template_entity| %>
+
+            <div class="divTableRow" id="<%= template_entity.filename.downcase %>">
+              <div class="divTableCell center-cell"><%= template_entity.channel %>&nbsp;</div>
+              <div class="divTableCell"><%= template_entity.type %>&nbsp;</div>
+              <div class="divTableCell center-cell"><%= template_entity.language %>&nbsp;</div>
+              <div class="divTableCell"><%= template_entity.description %>&nbsp;</div>
+              <div class="divTableCell center-cell">
+                <a href="#" style="color:green"><span class="glyphicon glyphicon-play action-icon"></span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="destroy-template" style="color:red"><span class="glyphicon glyphicon-remove action-icon"></span></a>
+              </div>
+            </div>
+
+        <% end %>
+    <% end %>
+
+  </div>
+  <div class="divTableFoot">
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+    <div class="divTableFootItem"></div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="js/index.js"></script>
